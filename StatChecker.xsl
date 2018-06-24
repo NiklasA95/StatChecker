@@ -12,6 +12,9 @@
 	<!--
 	<xsl:variable name="spieler">Motley</xsl:variable>
     -->
+	
+	<xsl:param name="spieler" as="xs:string" required="yes"/>
+	
     <xsl:template match="/">
 		<div>
 			<h1>
