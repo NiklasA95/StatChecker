@@ -10,11 +10,11 @@
 	
 	<msxsl:script language="CSharp" implements-prefix="cs"><![CDATA[
 	
-		private int bestRebounds;
-		private int bestAssists;
-		private int bestPoints;
+		private int bestRebounds = 0;
+		private int bestAssists = 0;
+		private int bestPoints = 0;
 
-		public string CheckStats(int reb, int ast, int pts)
+		public void CheckStats(int reb, int ast, int pts)
   		{
 			if reb > bestRebounds {
 				bestRebounds = reb;
@@ -27,7 +27,20 @@
 			}
 		}
 
-		public void Banana(){}
+		public int BestRebounds()
+		{
+			return bestRebounds;
+		}
+
+		public int BestAssists()
+		{
+			return bestAssists;
+		}
+
+		public int BestPoints()
+		{
+			return bestPoints;
+		}
 			
 	]]></msxsl:script>
 </xsl:stylesheet>

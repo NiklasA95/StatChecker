@@ -19,18 +19,27 @@
 				<xsl:value-of select="$spieler"/>
 			</h1>
 			<xsl:apply-templates select="//w:tr"/>
+			<p>
+				<xsl:text>Rebounds: </xsl:text>
+				<xsl:value-of select="cs:BestRebounds()"/>
+			</p>
+			<p>
+				<xsl:text>Assists: </xsl:text>
+				<xsl:value-of select="cs:BestAssists()"/>
+			</p>
+			<p>
+				<xsl:text>Points: </xsl:text>
+				<xsl:value-of select="cs:BestPoints()"/>
+			</p>
 		</div>
-    </xsl:template>
-            
+    </xsl:template>      
     
     <xsl:template match="w:tr">
         <xsl:if test="descendant::w:t[1]=$spieler">
-			<xsl:text>Rebounds: </xsl:text>
 			<xsl:variable name="rebs" select="descendant::w:t[3]"/>
 			<xsl:variable name="ast" select="descendant::w:t[4]"/>
 			<xsl:variable name="pts" select="descendant::w:t[5]"/>
-			<xsl:value-of select="cs:Banana()"/>
-			<!--<xsl:value-of select="cs:CheckStats($rebs, $ast, $pts)"/>-->
+			<xsl:value-of select="cs:CheckStats($rebs, $ast, $pts)"/>
 		</xsl:if>
     </xsl:template>
 	
