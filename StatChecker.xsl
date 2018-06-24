@@ -13,7 +13,7 @@
 	<xsl:variable name="spieler">Motley</xsl:variable>
     -->
 	
-	<xsl:param name="spieler" as="xs:string" required="yes"/>
+	<xsl:param name="spieler"/>
 	
     <xsl:template match="/">
 		<div>
